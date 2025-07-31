@@ -1,5 +1,5 @@
 import React from "react";
-import profile from '/src/assets/IMG_20250626_121425 (1).jpg'
+import profile from "/src/assets/IMG_20250626_121425 (1).jpg";
 import { useState, useEffect } from "react";
 import {
   FaHome,
@@ -76,75 +76,83 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
               href="https://www.facebook.com/profile.php?id=100008262348487"
               target="_blank"
               rel="noreferrer"
-            ><FaFacebookF /></a>
-            
+            >
+              <FaFacebookF />
+            </a>
           </button>
           <button className="bg-gray-700 h-8 hover:bg-pink-600 p-2 rounded-full">
             <a
               href="https://www.instagram.com/naveen_pandit11/"
               target="_blank"
               rel="noreferrer"
-            ><FaInstagram /></a>
-            
+            >
+              <FaInstagram />
+            </a>
           </button>
           <button className="bg-gray-700 h-8 hover:bg-blue-400 p-2 rounded-full">
-            <a
-              href=""
-              target="_blank"
-              rel="noreferrer"
-              
-            ><FaSkype /></a>
-            
+            <a href="" target="_blank" rel="noreferrer">
+              <FaSkype />
+            </a>
           </button>
           <button className="bg-gray-700 h-8 hover:bg-blue-700 p-2 rounded-full">
             <a
               href="https://www.linkedin.com/in/naveen-kumar-pandit-b49a472b1/"
               target="_blank"
               rel="noreferrer"
-            ><FaLinkedinIn /></a>
-            
+            >
+              <FaLinkedinIn />
+            </a>
           </button>
         </div>
       </div>
 
-      {/* Navigation */}
+
       <nav className="flex flex-col space-y-2 px-6 pb-8 text-sm">
-        <SidebarItem
-          icon={<FaHome />}
-          text="Home"
-          href="#home"
-          active={activeSection === "home"}
-        />
-        <SidebarItem
-          icon={<FaUserAlt />}
-          text="About"
-          href="#about"
-          active={activeSection === "about"}
-        />
-        <SidebarItem
-          icon={<FaFileAlt />}
-          text="Resume"
-          href="#resume"
-          active={activeSection === "resume"}
-        />
-        <SidebarItem
-          icon={<FaServicestack />}
-          text="Services"
-          href="#services"
-          active={activeSection === "services"}
-        />
-        <SidebarItem
-          icon={<FaEnvelope />}
-          text="Contact"
-          href="#contact"
-          active={activeSection === "contact"}
-        />
+        <button onClick={() => setIsOpen(false)}>
+          <SidebarItem
+            icon={<FaHome />}
+            text="Home"
+            href="#home"
+            active={activeSection === "home"}
+          />
+        </button>
+        <button onClick={() => setIsOpen(false)}>
+          <SidebarItem
+            icon={<FaUserAlt />}
+            text="About"
+            href="#about"
+            active={activeSection === "about"}
+          />
+        </button>
+        <button onClick={() => setIsOpen(false)}>
+          <SidebarItem
+            icon={<FaFileAlt />}
+            text="Resume"
+            href="#resume"
+            active={activeSection === "resume"}
+          />
+        </button>
+        <button onClick={() => setIsOpen(false)}>
+          <SidebarItem
+            icon={<FaServicestack />}
+            text="Services"
+            href="#services"
+            active={activeSection === "services"}
+          />
+        </button>
+        <button onClick={() => setIsOpen(false)}>
+          <SidebarItem
+            icon={<FaEnvelope />}
+            text="Contact"
+            href="#contact"
+            active={activeSection === "contact"}
+          />
+        </button>
       </nav>
     </div>
   );
 };
 
-// Reusable component
 const SidebarItem = ({ icon, text, href, active }) => (
   <a
     href={href}
