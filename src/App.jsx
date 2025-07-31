@@ -22,7 +22,7 @@ function App() {
 const [isOpen,setIsOpen]=useState(false);
   return (
     
-    <div className="flex overflow-hidden">
+    <div className="flex absolute w-screen overflow-y-hidden  ">
       <button className='fixed top-4 left-4 text-xl hover:shadow-lg  px-4 py-2 rounded-full shadow-2xl z-50' onClick={()=>setIsOpen(!isOpen)}>
         <FaBars onClick={()=>setIsOpen(!isOpen)}/>
       </button>
