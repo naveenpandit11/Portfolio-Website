@@ -47,7 +47,7 @@ export default function Contact() {
 
           <iframe
             title="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28264.564610328023!2d79.3859694783691!3d28.37736863702057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a01575153fe799%3A0x50c9839eb154cf74!2sBareilly%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1712572064705!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2669.5094153071045!2d77.7418690744007!3d30.4388019747274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDI2JzE5LjciTiA3N8KwNDQnNDAuMCJF!5e1!3m2!1sen!2sin!4v1753944346426!5m2!1sen!2sin"
             width="100%"
             height="250"
             style={{ border: 0 }}
