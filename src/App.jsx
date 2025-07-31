@@ -23,7 +23,7 @@ const [isOpen,setIsOpen]=useState(false);
   return (
     
     <div className="flex">
-      <button className='fixed top-4 left-4 bg-blue-600 text-white  px-4 py-2 rounded shadow-lg z-50' onClick={()=>setIsOpen(!isOpen)}>
+      <button className='fixed top-4 left-4 text-xl hover:shadow-lg  px-4 py-2 rounded-full shadow-2xl z-50' onClick={()=>setIsOpen(!isOpen)}>
         <FaBars onClick={()=>setIsOpen(!isOpen)}/>
       </button>
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/>

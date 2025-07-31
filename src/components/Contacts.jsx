@@ -1,96 +1,105 @@
-import React from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
-function Contacts() {
+export default function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_w6wfy7i", // Your service ID
+        "template_z6cwe3e", // Your template ID
+        form.current,
+        "hmEjvJla_1LtYhhog" // Your public key
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          console.error(error.text);
+          alert("Error sending message.");
+        }
+      );
+  };
+
   return (
-    <section id="contacts" className="bg-white m-10 w-[90%]">
-      <div className="flex flex-col px-6 lg:px-10">
-        <h1 className="font-medium sm:text-3xl text-2xl">Contact</h1>
-        <hr className="w-10 border-blue-500 h-4 border-t-2" />
-        <p>
-          Feel free to reach out for collaborations, project opportunities, or
-          just to say hello. I’m always open to connecting and creating
-          something awesome together!
-        </p>
-      </div>
-      <div className="grid mt-5 lg:grid-cols-[4fr_5fr] gap-2">
-        <div className="flex flex-col gap-3 h-[630px] place-self-center border-1 border- w-[90%] shadow-md hover:shadow-xl transition-shadow duration-300 p-4 bg-white rounded">
-          <div className="flex flex-row p-1 items-center hover:border-2 border-blue-500">
-            <FaMapMarkerAlt className="text-3xl w-[32px] p-1 h-[32px] text-blue-500 border-2 border-blue-500 rounded-full" />
-            <div className="ml-2">
-              <h1 className="font-medium">Address</h1>
-              <p className="text-sm">Dehradun, Uttarakhand, India</p>
-            </div>
+    <div className="bg-gray-100 py-10 px-4 lg:px-20" id="contact">
+      <h2 className="text-3xl font-semibold text-center mb-10">Contact</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="space-y-6">
+          <div className="flex items-center gap-4 p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+            <FaMapMarkerAlt className="text-blue-500 text-xl" />
+            <p className="text-gray-700">Dehradun, Uttarakhand, IN</p>
           </div>
-          <div className="flex flex-row p-1 items-center hover:border-2 border-blue-500">
-            <FaPhoneAlt className="text-2xl w-[32px] p-1 h-[32px] text-blue-500 border-2 border-blue-500 rounded-full" />
-            <div className="ml-2">
-              <h1 className="font-medium">Call Us</h1>
-              <p className="text-sm">+91 94107 88233</p>
-            </div>
+          <div className="flex items-center gap-4 p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+            <FaPhoneAlt className="text-blue-500 text-xl" />
+            <p className="text-gray-700">+91 94107 88233</p>
           </div>
-          <div className="flex flex-row p-1 items-center hover:border-2 border-blue-500">
-            <FaEnvelope className="text-3xl w-[32px] p-1 h-[32px] text-blue-500 border-2 border-blue-500 rounded-full" />
-            <div className="ml-2">
-              <h1 className="font-medium">Email Us</h1>
-              <p className="text-sm">naveenpandit3559@gmail.com</p>
-            </div>
+          <div className="flex items-center gap-4 p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+            <FaEnvelope className="text-blue-500 text-xl" />
+            <p className="text-gray-700">naveenpandit3559@gmail.com</p>
           </div>
-          <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg">
-            <iframe
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3439.8054710063743!2d77.74804499999998!3d30.441615999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDI2JzI5LjgiTiA3N8KwNDQnNTMuMCJF!5e0!3m2!1sen!2sin!4v1753446260766!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+
+          <iframe
+            title="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28264.564610328023!2d79.3859694783691!3d28.37736863702057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a01575153fe799%3A0x50c9839eb154cf74!2sBareilly%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1712572064705!5m2!1sen!2sin"
+            width="100%"
+            height="250"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            className="rounded-md shadow"
+          ></iframe>
         </div>
-        <div className="flex flex-col gap-3 h-[630px] place-self-center border-1 border- w-[90%] shadow-md hover:shadow-xl transition-shadow duration-300 p-4 bg-white rounded">
-          <form className="space-y-4">
+
+        <div className="bg-white p-6 shadow-md rounded-lg">
+          <form ref={form} onSubmit={sendEmail} className="space-y-5">
             <div>
-              <label className="block font-raleway font-medium text-gray-700 mb-1">
-                Your Name
-              </label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
               <input
                 type="text"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                name="user_name"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Enter your name"
               />
             </div>
 
             <div>
-              <label className="block font-raleway font-medium text-gray-700 mb-1">
-                Your Email
-              </label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
               <input
                 type="email"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                name="user_email"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Enter your email"
               />
             </div>
 
             <div>
-              <label className="block font-raleway font-medium text-gray-700 mb-1">
-                Subject
-              </label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
               <input
                 type="text"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="Subject"
+                name="subject"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                placeholder="Enter subject"
               />
             </div>
 
             <div>
-              <label className="block font-raleway font-medium text-gray-700 mb-1">
-                Message
-              </label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
               <textarea
+                name="message"
                 rows="5"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Type your message"
               ></textarea>
             </div>
@@ -98,7 +107,7 @@ function Contacts() {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-all duration-200"
+                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all duration-200"
               >
                 Send Message
               </button>
@@ -106,8 +115,6 @@ function Contacts() {
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
-
-export default Contacts;

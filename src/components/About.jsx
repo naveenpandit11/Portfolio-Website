@@ -1,5 +1,5 @@
 import React from "react";
-
+import profile from '/src/assets/IMG_20250626_121425 (1).jpg'
 function About() {
   return (
     <section id="about" className="bg-white m-10 ">
@@ -17,15 +17,15 @@ function About() {
         <br />
         <div className="flex lg:flex-row flex-col">
           <img
-            className="w-2/6 place-self-center"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            className="h-[60vh] place-self-center rounded-[20%] p-5 border-red-500 border-3"  
+            src={profile}
             alt="profile-pic"
           />
           <div className="lg:ml-5 mt-6">
             <h2 className="underline text-2xl font-medium">
               Web Developer & Data Structure.
             </h2>
-            <p className="mt-3">
+            <p className="mt-3">https://cdn-icons-png.flaticon.com/512/3135/3135715.png
               Aspiring web developer and data science enthusiast skilled in
               HTML, CSS, React, and data analysis, passionate about building
               interactive websites and solving real-world problems with data.

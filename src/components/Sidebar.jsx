@@ -1,4 +1,5 @@
 import React from "react";
+import profile from '/src/assets/IMG_20250626_121425 (1).jpg'
 import { useState, useEffect } from "react";
 import {
   FaHome,
@@ -49,7 +50,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   if (!isOpen) return null;
   return (
     <div
-      className={`h-screen w-72 bg-[#0f172a] text-white flex gap-5 flex-col fixed top-0 left-0 shadow-2xl z-50
+      className={`h-screen w-72 bg-[#0f172a]  overflow-y-auto text-white flex gap-5 flex-col fixed top-0 left-0 shadow-2xl z-50
     transform transition-transform duration-300 ${
       isOpen ? "translate-x-0" : "-translate-x-full"
     }`}
@@ -64,12 +65,11 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           </button>
         </div>
         <img
-          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+          src={profile}
           alt="profile"
-          className="rounded-full w-24 h-24 mt-2 border-4 border-white shadow-md"
+          className="rounded-full h-[190px] mt-2 border-4 border-white shadow-md"
         />
         <h2 className="mt-4 font-bold text-xl">Naveen Pandit</h2>
-        {/* Social Icons */}
         <div className="flex space-x-3 mt-4">
           <button className="bg-gray-700 h-8 hover:bg-blue-600 p-2 rounded-full">
             <a
