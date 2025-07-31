@@ -26,7 +26,7 @@ const [isOpen,setIsOpen]=useState(false);
       <button className='fixed top-4 left-4 text-xl hover:shadow-lg  px-4 py-2 rounded-full shadow-2xl z-50' onClick={()=>setIsOpen(!isOpen)}>
         <FaBars onClick={()=>setIsOpen(!isOpen)}/>
       </button>
-      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/>
+      <div className='fixed'><Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/></div>
       <div className={`flex-1 transition-all duration-300 ${isOpen ? 'ml-64' : 'ml-0'}`}>
         <section id="home"><Home /></section>
         <section id="about"><About /></section>

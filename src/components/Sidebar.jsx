@@ -50,7 +50,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   if (!isOpen) return null;
   return (
     <div
-      className={`h-screen w-72 bg-[#0f172a]  overflow-y-auto text-white flex gap-5 flex-col fixed top-0 left-0 shadow-2xl z-50
+      className={`fixed h-[100vh] w-72 bg-[#0f172a] z-50 overflow-y-auto text-white flex gap-5 flex-col fixed top-0 left-0 shadow-2xl z-50
     transform transition-transform duration-300 ${
       isOpen ? "translate-x-0" : "-translate-x-full"
     }`}

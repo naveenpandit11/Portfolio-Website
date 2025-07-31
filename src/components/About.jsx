@@ -25,7 +25,7 @@ function About() {
             <h2 className="underline text-2xl font-medium">
               Web Developer & Data Structure.
             </h2>
-            <p className="mt-3">https://cdn-icons-png.flaticon.com/512/3135/3135715.png
+            <p className="mt-3">
               Aspiring web developer and data science enthusiast skilled in
               HTML, CSS, React, and data analysis, passionate about building
               interactive websites and solving real-world problems with data.
