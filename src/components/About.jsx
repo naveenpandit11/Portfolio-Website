@@ -17,7 +17,7 @@ function About() {
         <br />
         <div className="flex lg:flex-row flex-col">
           <img
-            className="h-[60vh] place-self-center rounded-[20%] p-5 border-red-500 border-3"  
+            className="h-[50vh] place-self-center rounded-[20%] p-5 border-red-500 border-3"  
             src={profile}
             alt="profile-pic"
           />
