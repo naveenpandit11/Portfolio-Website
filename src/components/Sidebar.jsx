@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "/src/assets/IMG_20250626_121425 (1).jpg";
+import profile from "/src/assets/me.jpg";
 import { useState, useEffect } from "react";
 import {
   FaHome,
